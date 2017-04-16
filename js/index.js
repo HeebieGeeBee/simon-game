@@ -1,4 +1,5 @@
 
+$(document).ready(function() {
 const topLeft = $("#game-left-top"),
   topRight = $('#game-right-top'),
   bottomLeft = $('#game-left-bottom'),
@@ -44,7 +45,6 @@ let status = {
   "gameArr" : []
 }
 
-$(document).ready(function() {
 //main Game functions
 function genSequence() {
   let random = Math.round(Math.random() * (4 - 1)) + 1;
