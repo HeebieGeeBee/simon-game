@@ -164,7 +164,7 @@ function userSequence() {
 onOff.on(CLICK_EVENT, function() {
   if(!status.on) {
     topLeftSound.play();
-    topRightSound.2.play();
+    topRightSound.play();
     bottomLeftSound.play();
     bottomRightSound.play();
     wrongSound.play();
