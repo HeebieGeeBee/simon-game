@@ -10,6 +10,8 @@ const topLeft = $("#game-left-top"),
   strict = $('#strict'),
   win = $('#win-screen'),
   sequenceArr = [];
+  
+var CLICK_EVENT = ("ontouchstart" in window ? "touchstart" : "click")  
 // sounds  
 const wrongSound = new Audio();
 wrongSound.src = "http://www.noiseforfun.com/waves/interface-and-media/NFF-wrong-02.wav";
@@ -124,16 +126,16 @@ function userSequence() {
       }
     }  
   }
-  topLeft.click(function() {
+  topLeft.on(CLICK_EVENT, function()  {
     userClick(1);
   })
-  topRight.click(function() {
+  topRight.on(CLICK_EVENT, function()  {
     userClick(2);
   })
-  bottomLeft.click(function() {
+  bottomLeft.on(CLICK_EVENT, function()  {
     userClick(3);
   })
-  bottomRight.click(function() {
+  bottomRight.on(CLICK_EVENT, function()  {
     userClick(4);
   })
   
@@ -160,7 +162,7 @@ function userSequence() {
 }
 
 //Game control click listeners
-onOff.click( function() {
+onOff.on(CLICK_EVENT, function() {
   if(!status.on) {
     status.on = true;
     onOff.css("color", "green");
@@ -170,7 +172,7 @@ onOff.click( function() {
   } 
 }) 
 
-start.click(function() {
+start.on(CLICK_EVENT, function()  {
 
   if(status.on && !status.running) {
   status.running = true;  
@@ -182,7 +184,7 @@ start.click(function() {
   }
 })
 
-strict.click(function() {
+strict.on(CLICK_EVENT, function()  {
   if(!status.strict) {
   status.strict = true;
   strict.css('color', 'green');
@@ -192,7 +194,7 @@ strict.click(function() {
   } 
 })
 
-win.click(function(){
+win.on(CLICK_EVENT, function() {
   win.hide();
   reset();
 })
