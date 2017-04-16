@@ -163,6 +163,11 @@ function userSequence() {
 //Game control click listeners
 onOff.on(CLICK_EVENT, function() {
   if(!status.on) {
+    sounds.1.play();
+    sounds.2.play();
+    sounds.3.play();
+    sounds.4.play();
+    sounds.5.play();
     onSequence();
     status.on = true;
     onOff.css("color", "green");
