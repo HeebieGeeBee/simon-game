@@ -42,6 +42,8 @@ let status = {
   "on" : false,
   "gameArr" : []
 }
+
+$(document).ready(function() {
 //main Game functions
 function genSequence() {
   let random = Math.round(Math.random() * (4 - 1)) + 1;
@@ -217,3 +219,5 @@ function turnOff() {
     level.html("-").css('color', 'red');
     strict.css('color', 'red')
 }
+
+})
