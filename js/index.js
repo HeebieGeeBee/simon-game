@@ -1,5 +1,5 @@
 $(document).ready(function() {
-let topLeft = $("#game-left-top"),
+const topLeft = $("#game-left-top"),
   topRight = $('#game-right-top'),
   bottomLeft = $('#game-left-bottom'),
   bottomRight = $('#game-right-bottom'),
@@ -10,15 +10,15 @@ let topLeft = $("#game-left-top"),
   win = $('#win-screen'),
   sequenceArr = [];
 // sounds  
-let wrongSound = new Audio();
+const wrongSound = new Audio();
 wrongSound.src = "http://www.noiseforfun.com/waves/interface-and-media/NFF-wrong-02.wav";
-let topLeftSound = new Audio();
+const topLeftSound = new Audio();
 topLeftSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3";
-let topRightSound = new Audio();
+const topRightSound = new Audio();
 topRightSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3";
-let bottomLeftSound = new Audio();
+const bottomLeftSound = new Audio();
 bottomLeftSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3";
-let bottomRightSound = new Audio();
+const bottomRightSound = new Audio();
 bottomRightSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3";
 //game asset objects
 let sounds = {
