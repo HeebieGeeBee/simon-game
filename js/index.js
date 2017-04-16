@@ -163,11 +163,11 @@ function userSequence() {
 //Game control click listeners
 onOff.on(CLICK_EVENT, function() {
   if(!status.on) {
-    topLeftSound.play();
-    topRightSound.play();
-    bottomLeftSound.play();
-    bottomRightSound.play();
-    wrongSound.play();
+    topLeftSound.mute().play().unmute();
+    topRightSound.mute().play().unmute();
+    bottomLeftSound.mute().play().unmute();
+    bottomRightSound.mute().play().unmute();
+    wrongSound.mute().play().unmute();
     onSequence();
     status.on = true;
     onOff.css("color", "green");
