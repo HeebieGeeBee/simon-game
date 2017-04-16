@@ -157,7 +157,7 @@ function userSequence() {
 }
 
 //Game control click listeners
-onOff.on('touchstart', function() {
+onOff.on('click', function() {
   if(!status.on) {
     status.on = true;
     onOff.css("color", "green");
@@ -167,7 +167,7 @@ onOff.on('touchstart', function() {
   } 
 }) 
 
-start.click(function() {
+start.on('click', function() {
 
   if(status.on && !status.running) {
   status.running = true;  
