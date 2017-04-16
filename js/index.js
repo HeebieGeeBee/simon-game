@@ -157,7 +157,7 @@ function userSequence() {
 }
 
 //Game control click listeners
-onOff.click(function() {
+onOff.on('touchstart', function() {
   if(!status.on) {
     status.on = true;
     onOff.css("color", "green");
