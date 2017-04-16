@@ -1,3 +1,4 @@
+$(document).ready(function() {
 let topLeft = $("#game-left-top"),
   topRight = $('#game-right-top'),
   bottomLeft = $('#game-left-bottom'),
@@ -43,7 +44,7 @@ let status = {
   "gameArr" : []
 }
 
-$(document).ready(function() {
+
 //main Game functions
 function genSequence() {
   let random = Math.round(Math.random() * (4 - 1)) + 1;
@@ -159,7 +160,7 @@ function userSequence() {
 }
 
 //Game control click listeners
-onOff.on('click', function() {
+onOff.click( function() {
   if(!status.on) {
     status.on = true;
     onOff.css("color", "green");
@@ -169,7 +170,7 @@ onOff.on('click', function() {
   } 
 }) 
 
-start.on('click', function() {
+start.click(function() {
 
   if(status.on && !status.running) {
   status.running = true;  
