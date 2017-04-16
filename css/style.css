@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+#whole-container {
+  margin: auto;
+  width: 100vw;
+}
+#win-screen {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background-color: orange;
+  font-family: arial;
+  font-size: 12vh;
+  color: white;
+  text-align: center;
+  display: none;
+}
+#game-container {
+  display: inline-block;
+  float: left;
+}
+#controls {
+  float: left;
+  display: inline-block;
+
+}
+.control {
+  color: red;
+  text-align: center; 
+  vertical-align: middle;
+  font-family: arial;
+
+}
+#onOff {
+  background-color: #000001;
+}
+#level {
+  background-color: #151515;
+}
+#start {
+  background-color: #424242;
+}
+#strict {
+  background-color: #282828;
+}
+.game-square {
+  float: left;
+  display: inline-block;
+}
+#game-left-top {
+  background-color: blue;
+}
+#game-right-top {
+  background-color: red;
+}
+#game-left-bottom {
+  background-color: yellow;
+}
+#game-right-bottom {
+  background-color: green;
+}
+
+@media (max-width: 1800px) and ( orientation: landscape) {
+  #game-container {
+    width: 80vw;
+    height: 100vh;
+    display: inline-block;
+    float: left;
+  }
+  #controls {
+    width: 20vw;
+    height: 100vh;
+  }
+  .control {
+    height: 25vh;
+    font-size: 10vh;
+    line-height: 25vh;
+  }
+  .game-square {
+    width: 40vw;
+    height: 50vh;
+    display: inline-block;
+    float: left;
+  }
+}
+
+@media (max-width: 1500px) and ( orientation: portrait) {
+  #controls {
+    width: 100vw;
+    height: 20vh;
+    float: left;
+  }
+  .control {
+    width: 50vw;
+    height: 10vh;
+    float: left;
+    font-size: 9vw;
+    line-height: 10vh;
+  }
+  #game-container {
+    width: 100vw;
+    height: 80vh;
+  }
+  .game-square {
+    width: 50vw;
+    height: 40vh;
+  }
+  #win-screen {
+    font-size: 12vw;
+  }
+}
