@@ -9,20 +9,19 @@ const topLeft = $("#game-left-top"),
   start = $('#start'),
   strict = $('#strict'),
   win = $('#win-screen'),
-  sequenceArr = [];
-  
-var CLICK_EVENT = ("ontouchstart" in window ? "touchstart" : "click")  
+  sequenceArr = [],
+  CLICK_EVENT = ("ontouchstart" in window ? "touchstart" : "click");  
 // sounds  
 const wrongSound = new Audio();
-wrongSound.src = "http://www.noiseforfun.com/waves/interface-and-media/NFF-wrong-02.wav";
+wrongSound.src = "sounds/NFF-wrong-02.wav";
 const topLeftSound = new Audio();
-topLeftSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound1.mp3";
+topLeftSound.src = "sounds/simonSound1.mp3";
 const topRightSound = new Audio();
-topRightSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound2.mp3";
+topRightSound.src = "sounds/simonSound2.mp3";
 const bottomLeftSound = new Audio();
-bottomLeftSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound3.mp3";
+bottomLeftSound.src = "sounds/simonSound3.mp3";
 const bottomRightSound = new Audio();
-bottomRightSound.src = "https://s3.amazonaws.com/freecodecamp/simonSound4.mp3";
+bottomRightSound.src = "sounds/simonSound4.mp3";
 //game asset objects
 let sounds = {
   1: topLeftSound,
@@ -164,6 +163,7 @@ function userSequence() {
 //Game control click listeners
 onOff.on(CLICK_EVENT, function() {
   if(!status.on) {
+    onSequence();
     status.on = true;
     onOff.css("color", "green");
     level.html("0").css("color", 'red');
@@ -222,5 +222,50 @@ function turnOff() {
     level.html("-").css('color', 'red');
     strict.css('color', 'red')
 }
+
+function onSequence() {
+  let sequenceArr = [1,2,3,4,1,2,3,4];
+  for (let i = 0; i < sequenceArr.length; i++) {
+    (function(i) {
+      setTimeout(function() {
+        if (sequenceArr[i] === 1) {
+          topLeftSound.play();
+          topLeft.animate({
+            opacity: 0.5
+          }, 100).animate({
+            opacity: 1
+          }, 100);
+        }
+        if (sequenceArr[i] === 2) {
+          topRightSound.play();
+          topRight.animate({
+            opacity: 0.5
+          }, 100).animate({
+            opacity: 1
+          }, 100);
+
+        }
+        if (sequenceArr[i] === 3) {
+          bottomLeftSound.play();
+          bottomLeft.animate({
+            opacity: 0.5
+          }, 100).animate({
+            opacity: 1
+          }, 100);
+
+        }
+        if (sequenceArr[i] === 4) {
+          bottomRightSound.play();
+          bottomRight.animate({
+            opacity: 0.5
+          }, 100).animate({
+            opacity: 1
+          }, 100);
+        }
+      }, 150 * i)
+    }(i));
+  }
+
+}  
 
 })
