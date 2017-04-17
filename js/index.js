@@ -173,12 +173,16 @@ onOff.on(CLICK_EVENT, function() {
     bottomLeftSound.play();
     bottomRightSound.play();
     wrongSound.play();
+    setTimeout(function() {
+    
     topLeftSound.muted = false;
     topRightSound.muted = false;
     bottomLeftSound.muted = false;
     bottomRightSound.muted = false;
     wrongSound.muted = false;
-    onSequence();
+    },800);
+    
+   // onSequence();
     status.on = true;
     onOff.css("color", "green");
     level.html("0").css("color", 'red');
