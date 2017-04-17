@@ -238,7 +238,7 @@ function turnOff() {
     strict.css('color', 'red')
 }
 
-function onSequence() {
+/*function onSequence() {
   let sequenceArr = [1,2,3,4,1,2,3,4];
   for (let i = 0; i < sequenceArr.length; i++) {
     (function(i) {
@@ -282,5 +282,5 @@ function onSequence() {
   }
 
 }  
-
+*/
 })
